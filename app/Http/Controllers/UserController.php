@@ -193,4 +193,35 @@ class UserController extends Controller
             return $randomString;
     }
 
+     function viewUser(){
+         return Users::all();
+     }
+    
+     function updateUser(request $req){
+
+        $validator = Validator::make($req->all(), [
+            'name' => 'string',
+            'email' => 'email',
+            'password' => 'string',  
+        ]);
+
+        if ($validator->fails()) {
+            return response([
+                'errorMessage' => true,
+                'message' => $validator->errors()
+            ]);
+        }
+
+        else {
+            $userModel = new Users;
+
+            $userModel->name = $req->name;
+            $userModel->email = $req->email;
+            $userModel->password = $req->password;
+
+            $userModel->save();
+        }
+         
+     }
+
 }
