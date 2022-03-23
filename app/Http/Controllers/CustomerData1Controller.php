@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\CustomerData1;
-
+use DB;
 use Illuminate\Http\Request;
 
 class CustomerData1Controller extends Controller
@@ -186,6 +186,8 @@ class CustomerData1Controller extends Controller
         ]);
         
     }
+
+    
 
     function deleteInfoSecond(){
 
