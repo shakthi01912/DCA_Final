@@ -123,4 +123,14 @@ class CustomerDatasController extends Controller
                 'message' => "Deleted Successfuly!"
             ]);
     }
+
+
+    // function retrieveByFileType(Request $req){
+
+    //     $output = CustomerData::where('DCAFileType', $req->fileType);
+          
+    //     return  $output;
+                
+    
+    //     }
 }
