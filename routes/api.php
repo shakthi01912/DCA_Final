@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CustomerDatasController;
 use App\Http\Controllers\CustomerData1Controller;
 use App\Http\Controllers\DomesticOnlyController;
+use App\Http\Controllers\AdminController;
 
 //user
 Route::post("adduser",[UserController::class,'addUser']);
@@ -15,6 +16,16 @@ Route::post("forgetPasswordOTP",[UserController::class,'forgetPasswordOTP']);
 Route::put("forgetPasswordOTPValidate",[UserController::class,'forgetPasswordOTPValidate']);
 Route::get("viewUser",[UserController::class,'viewUser']);
 Route::post("updateUser",[UserController::class,'updateUser']);
+
+
+//admin
+Route::post("addadmin",[AdminController::class,'addAdmin']);
+Route::get("login",[AdminController::class,'login']);
+Route::put("changePassword",[AdminController::class,'changePassword']);
+Route::post("forgetPasswordOTP",[AdminController::class,'forgetPasswordOTP']);
+Route::put("forgetPasswordOTPValidate",[AdminController::class,'forgetPasswordOTPValidate']);
+Route::get("viewadmin",[AdminController::class,'viewAdmin']);
+Route::post("updateadmin",[AdminController::class,'updateAdmin']);
 
 
 //customerData
