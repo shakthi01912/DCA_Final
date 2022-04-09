@@ -29,6 +29,8 @@ Route::post("addInfoSecond",[CustomerData1Controller::class,'addInfoSecond']);
 
 
 
+Route::get("getDetailsByType/{type}",[CustomerDatasController::class,'getDetailsByType']);
+
 
 //middleware
 Route::group(['middleware' => 'auth:sanctum'], function(){

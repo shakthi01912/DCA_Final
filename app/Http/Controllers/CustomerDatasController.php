@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\CustomerData;
+use DB;
 
 class CustomerDatasController extends Controller
 {
@@ -104,6 +105,10 @@ class CustomerDatasController extends Controller
             'message' => "Details have been updated!!"
         ]);
         
+    }
+
+    function getDetailsByType(Request $req){
+        return DB::Select("select * from CustomerDatas1 cd1,CustomerDatas cd where cd1.CustomerDataID = cd.id and cd.DCAFileType='$req->type'");
     }
 
     function deleteInfo(){
